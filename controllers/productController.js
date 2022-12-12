@@ -54,7 +54,7 @@ async function createProduct(req, res) {
     res.writeHead(201, { "Content-Type": "application/json" });
     return res.end(JSON.stringify(newProduct));
   } catch (error) {
-    console.log(error);
+    console.log(`there was an error${error}`);
   }
 }
 
@@ -100,7 +100,7 @@ async function deleteProduct(req, res, id) {
     } else {
       await Product.remove(id);
       res.writeHead(200, { "Content-Type": "application/json" });
-      res.end(JSON.stringify({ message: `Product ${id} removed` }));
+      res.end(JSON.stringify({ message: `Product ${id} was removed successfully` }));
     }
   } catch (error) {
     console.log(error);
